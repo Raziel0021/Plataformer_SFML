@@ -16,9 +16,13 @@ if %configuration% == Release (
 	XCOPY "%solutionDir%libs\SFML-2.5.1\bin\sfml-graphics-2.dll" "%targetDir%" /E /Y /S
 	XCOPY "%solutionDir%libs\SFML-2.5.1\bin\sfml-system-2.dll" "%targetDir%" /E /Y /S
 	XCOPY "%solutionDir%libs\SFML-2.5.1\bin\sfml-window-2.dll" "%targetDir%" /E /Y /S
+	XCOPY "%solutionDir%libs\STP\bin\zlib.dll" "%targetDir%" /E /Y /S
+	XCOPY "%solutionDir%libs\STP\bin\STP.dll" "%targetDir%" /E /Y /S
 )
 if %configuration% == Debug (
 	XCOPY "%solutionDir%libs\SFML-2.5.1\bin\sfml-graphics-d-2.dll" "%targetDir%" /E /Y /S
 	XCOPY "%solutionDir%libs\SFML-2.5.1\bin\sfml-system-d-2.dll" "%targetDir%" /E /Y /S
 	XCOPY "%solutionDir%libs\SFML-2.5.1\bin\sfml-window-d-2.dll" "%targetDir%" /E /Y /S
+	XCOPY "%solutionDir%libs\STP\bin\zlibd.dll" "%targetDir%" /E /Y /S
+	XCOPY "%solutionDir%libs\STP\bin\STP-d.dll" "%targetDir%" /E /Y /S
 )

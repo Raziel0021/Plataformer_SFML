@@ -1,22 +1,31 @@
-#include <SFML/Graphics.hpp>
+#include "SFML/Graphics.hpp"
+#include "STP/TMXLoader.hpp"
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-	sf::CircleShape shape(100.f);
-	shape.setFillColor(sf::Color::Green);
-	while (window.isOpen())
-	{
+	sf::RenderWindow window(sf::VideoMode(360, 280), "STP Example");
+	tmx::TileMap map("res/EjemploMapa.tmx");
+
+	map.ShowObjects(); // Display all the layer objects.
+
+	map.GetLayer("World").visible = false; // Hide a Layer named World
+
+										   // Start the game loop
+	while (window.isOpen()) {
+		// Process events
 		sf::Event event;
-		while (window.pollEvent(event))
-		{
+		while (window.pollEvent(event)) {
+			// Close window : exit
 			if (event.type == sf::Event::Closed)
 				window.close();
 		}
-
+		// Clear screen
 		window.clear();
-		window.draw(shape);
+		// Draw the map
+		window.draw(map);
+		// Update the window
 		window.display();
 	}
-	return 0;
+
+	return EXIT_SUCCESS;
 }
