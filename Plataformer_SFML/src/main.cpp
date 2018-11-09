@@ -3,12 +3,10 @@
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(360, 280), "STP Example");
-	tmx::TileMap map("res/EjemploMapa.tmx");
+	sf::RenderWindow window(sf::VideoMode(1568, 768), "STP Example");
+	tmx::TileMap map("res/intento2.tmx");
 
 	map.ShowObjects(); // Display all the layer objects.
-
-	map.GetLayer("World").visible = false; // Hide a Layer named World
 
 										   // Start the game loop
 	while (window.isOpen()) {
